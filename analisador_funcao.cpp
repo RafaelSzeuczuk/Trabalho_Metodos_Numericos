@@ -221,6 +221,13 @@ string pre_processar_string_funcao_para_analise(const string& str_funcao) {
     if (pos_igual != string::npos) {
         str_processada = str_processada.substr(pos_igual + 1);
     }
+    size_t pos_e_exp = str_processada.find("e^");
+    while (pos_e_exp != string::npos) {
+        if (pos_e_exp == 0 || !isalpha(str_processada[pos_e_exp-1])) {
+            str_processada.replace(pos_e_exp, 2, "exp");
+        }
+        pos_e_exp = str_processada.find("e^", pos_e_exp + 1);
+    }
     str_processada.erase(remove(str_processada.begin(), str_processada.end(), ' '), str_processada.end());
     return str_processada;
 }
