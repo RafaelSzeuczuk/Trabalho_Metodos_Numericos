@@ -5,6 +5,7 @@
 #include <functional>
 #include <iomanip>
 #include <fstream>
+#include <cmath>
 
 using namespace std;
 
@@ -19,12 +20,6 @@ double newton(const function<double(double)>& funcao_f, const function<double(do
 double secante(const function<double(double)>& funcao, double x0_val, double x1_val, double tolerancia, int max_iteracoes, int& iteracoes_realizadas, double& diferenca_final);
 
 double falsa_posicao(const function<double(double)>& funcao, double a_val, double b_val, double tolerancia, int max_iteracoes, int& iteracoes_realizadas, double& diferenca_final);
-
-
-#include <fstream>
-#include <iomanip>
-#include <string>
-#include <cmath>
 
 void registrarResultado(const string& nome_metodo, double raiz, double valor_funcao, double erro, int iteracoes) {
     static bool cabecalho_escrito = false;
