@@ -20,9 +20,10 @@ double secante(const function<double(double)>& funcao, double x0_val, double x1_
 
 double falsa_posicao(const function<double(double)>& funcao, double a_val, double b_val, double tolerancia, int max_iteracoes, int& iteracoes_realizadas, double& diferenca_final);
 
+
 void registrarResultado(const string& nome_metodo, double raiz, double valor_funcao, double erro, int iteracoes) {
     static bool cabecalho_escrito = false;
-    static ofstream arquivo_saida("iteracoes.txt", ios::out);
+    static ofstream arquivo_saida("iteracoes.txt", ios::app);
 
     if (!cabecalho_escrito) {
         arquivo_saida << left << setw(20) << "Metodo"
