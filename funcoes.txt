@@ -1,0 +1,24 @@
+# g++ -std=c++17 main.cpp analisador_funcao.cpp metodos_numericos.cpp -o trabalho_computacional 
+# ./trabalho_computacional
+
+# Funcoes e parametros para os metodos numericos
+# Formato:
+# METODO; FUNCAO_F; [FUNCAO_G/FUNCAO_DF]; PARAMETRO1; PARAMETRO2; EPSILON; MAX_ITERACOES
+
+# Funcao: f(x) = e^(-x^2) - cos(x)
+# Parametros: epsilon = 10^-2 (0.01), it = 100
+
+# Bissecao, considerando [1,2]
+BISSECAO; e^(-x^2) - cos(x); 1.0; 2.0; 0.01; 100
+
+# MIL (Iteracao de Ponto Fixo), com g(x) = cos(x) - e^(-x^2) + x e x0 = 1.5
+MIL; e^(-x^2) - cos(x); cos(x) - e^(-x^2) + x; 1.5; 0.01; 100
+
+# Newton, com x0 = 1.5
+NEWTON; e^(-x^2) - cos(x); sen(x) - 2*x*e^(-x^2); 1.5; 0.01; 100
+
+# Secante, com x0 = 1 e x1 = 2
+SECANTE; e^(-x^2) - cos(x); 1.0; 2.0; 0.01; 100
+
+# Regula Falsi, com x0 = 1 e x1 = 2
+REGULA_FALSI; e^(-x^2) - cos(x); 1.0; 2.0; 0.01; 100
