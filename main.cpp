@@ -75,7 +75,7 @@ int main() {
     
     string linha;
     int numero_linha = 0;
-
+    remove("iteracoes.txt");
     while (getline(arquivo_entrada, linha)) {
         numero_linha++;
 
@@ -86,6 +86,11 @@ int main() {
         cout << "\n--------------------------------------------------" << endl;
         cout << "Linha " << numero_linha << ": " << linha << endl;
         cout << "--------------------------------------------------" << endl;
+
+        static ofstream arquivo_saida("iteracoes.txt", ios::app);
+        arquivo_saida<<left<< "\n--------------------------------------------------" << endl
+                    <<left<< "Linha " << numero_linha << ": " << linha << endl
+                    <<left<< "--------------------------------------------------" << endl;
 
         stringstream stream_linha(linha);
         string tipo_metodo_str;
