@@ -3,7 +3,7 @@
 
 # Funcoes e parametros para os metodos numericos
 # Formato:
-# METODO; FUNCAO_F; [FUNCAO_G/FUNCAO_DF]; PARAMETRO1; PARAMETRO2; EPSILON; MAX_ITERACOES
+# METODO; FUNCAO_F; [FUNCAO_G/FUNCAO_DF]; PARAMETRO1; [PARAMETRO2]; EPSILON; MAX_ITERACOES
 
 # Funcao: f(x) = e^(-x^2) - cos(x)
 # Parametros: epsilon = 10^-2 (0.01), it = 100
